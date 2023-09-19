@@ -6,6 +6,7 @@ import jakarta.persistence.*;
 @Entity
 @Table(name = "employees")
 public class Employee {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -19,13 +20,15 @@ public class Employee {
     @Column(name = "email_id")
     private String emailId;
 
-    public Employee(){
-
+    public Employee(String firstName, String lastName, String emailId){
+        this.firstName= firstName;
+        this.lastName= lastName;
+        this.emailId= emailId;
     }
-    public Employee(String firstName, String lastName, String emailId) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.emailId = emailId;
+
+
+    public Employee(String){
+
     }
 
     public long getId() {
